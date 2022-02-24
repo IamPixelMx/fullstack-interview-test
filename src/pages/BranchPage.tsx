@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
-import {  useRouter } from "router";
+import { useRouter } from "router";
 import { useStore, useActions } from "store";
 import { getCommits } from "services/api";
 import { Link } from "components";
@@ -46,7 +46,7 @@ const BranchPage = () => {
           </tr>
         </thead>
       </Table>
-
+      {!(commits && commits.length > 0) && "No commit has been created"}
       {commits &&
         commits.map(
           ({
@@ -56,10 +56,10 @@ const BranchPage = () => {
             sha: string;
             commit: any;
           }) => (
-            <Table bordered>
+            <Table key={`commit-${sha}`} bordered>
               <tbody>
                 <tr>
-                  <th className="table-active" colSpan={3}>
+                  <th className="table-active" colSpan={2}>
                     <Link
                       to={`/commit/${sha}`}
                       className="dark-link"
@@ -70,7 +70,7 @@ const BranchPage = () => {
                   </th>
                 </tr>
                 <tr>
-                  <td>{author.name}</td>
+                  <td className="w-50">{author.name}</td>
                   <td>{author.date}</td>
                 </tr>
               </tbody>

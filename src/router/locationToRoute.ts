@@ -1,5 +1,5 @@
 import type { Location } from "history";
-import qs from 'querystringify';
+import qs from "querystringify";
 
 type Props = {
   location: Location;

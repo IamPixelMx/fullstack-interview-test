@@ -1,7 +1,7 @@
 import React from "react";
 import { useStore } from "store";
-import { initialRoutes } from "router";
-import { Alert, Loader, Link } from "components";
+import { Container } from "react-bootstrap";
+import { Alert, Loader, Nav } from "components";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const {
@@ -10,16 +10,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <React.Fragment>
-      <nav>
-        <Link to={initialRoutes.home.path}>
-          <img src="/logo.png" alt="logo" className="pointer" />
-        </Link>
-      </nav>
-
-      <div className="container">
+      <Nav />
+      <Container>
         <Alert alertText={alertText} alertStatus={alertStatus} />
         {children}
-      </div>
+      </Container>
       <Loader show={loading} />
     </React.Fragment>
   );

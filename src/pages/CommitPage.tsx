@@ -34,18 +34,18 @@ const CommitPage = () => {
       <Table bordered>
         <thead>
           <tr>
-            <th className="table-active" colSpan={3}>
+            <th className="table-active" colSpan={2}>
               {commitDetail?.commit?.message}
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>Author:</th>
+            <th className="w-25">Author:</th>
             <td>{commitDetail?.commit?.author?.name}</td>
           </tr>
           <tr>
-            <th>Author email:</th>
+            <th>Email:</th>
             <td>{commitDetail?.commit?.author?.email}</td>
           </tr>
           <tr>

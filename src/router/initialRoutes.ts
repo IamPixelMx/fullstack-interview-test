@@ -2,7 +2,7 @@ export type RoutesType = { [route: string]: { path: string; query?: object } };
 
 export const initialRoutes: RoutesType = {
   home: {
-    path: "/branches",
+    path: "/",
   },
   branches: {
     path: "/branches",
@@ -15,5 +15,8 @@ export const initialRoutes: RoutesType = {
   },
   pulls: {
     path: "/pulls",
+  },
+  pull: {
+    path: "/pull",
   },
 };

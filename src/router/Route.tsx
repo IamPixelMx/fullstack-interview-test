@@ -7,9 +7,10 @@ type Props = {
 };
 
 const Route = ({ path, children }: Props) => {
-  const { route } = useContext(RouterContext);
+  const { route, routesList } = useContext(RouterContext);
 
-// console.log('PATHS:', route.path, path, route.path !== path )
+  // console.log("PATHS:", route.path, path, route.path !== path);
+  // console.log("ROUTES:", routesList);
 
   // Return null if the supplied path doesn't match the current route path
   return route.path !== path ? null : (

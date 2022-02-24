@@ -13,13 +13,13 @@ export const getCommits = (branch?: string) =>
 export const getCommitDetail = (commitRef: string) =>
   fetchInstance.get(`/commits/${commitRef}`);
 
-export const getPRs = () => fetchInstance.get(`/pulls`);
+export const getPRs = () => fetchInstance.get(`/pulls?state=all`);
 
-export const getPRDetail = (pullNumber: string | number) =>
-  fetchInstance.get(`/pulls/${pullNumber}`);
+export const getPRDetail = (prNumber: number) =>
+  fetchInstance.get(`/pulls/${prNumber}`);
 
-export const getPRFiles = (pullNumber: string | number) =>
-  fetchInstance.get(`/pulls/${pullNumber}/files`);
+export const getPRFiles = (prNumber: number) =>
+  fetchInstance.get(`/pulls/${prNumber}/files`);
 
 interface BranchParamsType {
   base: string;
@@ -39,8 +39,8 @@ interface NewPRParamsType extends BranchParamsType {
 export const createPR = (params: NewPRParamsType) =>
   fetchInstance.post(`/pulls`, params);
 
-export const mergePR = (pullNumber: string | number) =>
-  fetchInstance.post(`/pulls/${pullNumber}/merge`);
+export const mergePR = (prNumber: number) =>
+  fetchInstance.post(`/pulls/${prNumber}/merge`);
 
-export const closePR = (pullNumber: string | number) =>
-  fetchInstance.patch(`/pulls/${pullNumber}`, { state: "closed" });
+export const closePR = (prNumber: number) =>
+  fetchInstance.patch(`/pulls/${prNumber}`, { state: "closed" });

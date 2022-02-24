@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
-import {  useActions } from "store";
-import {  useRouter } from "router";
+import { useActions } from "store";
+import { useRouter } from "router";
 import { getRepo, getBranches } from "services/api";
 import { Link } from "components";
 
@@ -16,9 +16,7 @@ const BranchesPage = () => {
       const data = await getBranches();
       setAllBranches(data);
       const repoData = await getRepo();
-      const {
-        parent: { default_branch = "master" },
-      } = repoData;
+      const { default_branch = "master" } = repoData;
       setBranch(default_branch);
     } catch (error: any) {
       showAlert({
@@ -31,8 +29,8 @@ const BranchesPage = () => {
   };
 
   const onClick = (name: string) => {
-      setRoutesList({ ...routesList, branch: { path: `/branch/${name}` } });
-      setBranch(name);
+    setRoutesList({ ...routesList, branch: { path: `/branch/${name}` } });
+    setBranch(name);
   };
 
   useEffect(() => {

@@ -6,10 +6,18 @@ type Props = {
   children: React.ReactNode;
   onClick?: (e: React.MouseEvent<Element, MouseEvent>) => void;
   className?: string;
+  textDecoration?: string;
 };
 
 const Link = React.memo(
-  ({ to, children, onClick, className = "", ...rest }: Props) => {
+  ({
+    to,
+    children,
+    onClick,
+    className = "",
+    textDecoration = "underline",
+    ...rest
+  }: Props) => {
     const { route } = useRouter();
 
     const handleClick = (e: React.MouseEvent) => {
@@ -22,7 +30,11 @@ const Link = React.memo(
     };
 
     return (
-      <p className={`text-decoration-underline pointer w-100 my-0 py-2 ${className}`} onClick={handleClick} {...rest}>
+      <p
+        className={`text-decoration-${textDecoration} pointer w-100 my-0 py-2 ${className}`}
+        onClick={handleClick}
+        {...rest}
+      >
         {children}
       </p>
     );
