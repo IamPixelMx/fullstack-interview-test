@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from 'assets/icons/logo.svg';
-import 'styles/App.css';
+import { Route, useRouter } from "router";
+import { useStore } from "store";
+import { BranchesPage, BranchPage, CommitPage } from "pages";
+import { Layout } from "components";
 
-function App() {
+const App = () => {
+  const { routesList } = useRouter();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      {/* <Route path={routesList.home.path}>
+        <BranchesPage />
+      </Route> */}
+      <Route path={routesList.branches.path}>
+        <BranchesPage />
+      </Route>
+      <Route path={routesList.branch.path}>
+        <BranchPage />
+      </Route>
+      <Route path={routesList.commit.path}>
+        <CommitPage />
+      </Route>
+    </Layout>
   );
-}
+};
 
 export default App;
