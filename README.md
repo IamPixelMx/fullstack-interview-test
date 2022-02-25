@@ -36,7 +36,7 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 - [Improve Developer Experience](#improve-developer-experience)
 - [Biggest Challenges](#biggest-challenges)
 
-- [**Run the porject**](#run-the-project)
+- [**Run project**](#run-project)
 
 
 ---
@@ -49,7 +49,7 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 - Previously I had in mind to use style modules to add some UI identity but I didn't have that much time to do it so, that's is something I would do given the time... besides unit testing, of course!
 - I really enjoyed building this project and I was surprised how easy it is to enable some GitHub functionalities inside a project, I learned a lot and I'm thankful for that! <3
 - I also enjoyed creating the error handlers. It's an aler that displays info and confirmations to the user, very handy even for me as a developer user :D
-<br/>
+</br>
 ### **Pages**
 
 The wep-app consists of 6 pages:
@@ -107,11 +107,15 @@ $ npm start
 
 ```
 
-Which runs the app in the development mode.\
-So, just open [http://localhost:3000](http://localhost:3000) to view it in the browser. Although, you will have only a limited amount of API calls available but it's ok, if you want to keep playing yo can add your own .env file with your own `API_KEY` and you can also add Github repo of your preference using `BASE_URL` like this:
+Which runs the app in the development mode.
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
+
+Although, you will have only a limited available amount of API calls but it's ok, if you want you can add your own .env file you just need to add your own GitHub `API_KEY` and, also, the `BASE_URL` to your favorite Github repository
 
 ```
 REACT_APP_API_KEY={YOUR_API_KEY}
+
 REACT_APP_BASE_URL=https://api.github.com/repos/{owner}/{repo}
 
 ```
