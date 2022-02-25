@@ -25,12 +25,11 @@ const PullsPage = () => {
   const onClick = async (number: number) => {
     fetchStart();
     try {
-      const data = await closePR(number);
-      data?.state === "close" &&
-        showAlert({
-          text: "Pull request has been closed",
-          status: "success",
-        });
+      await closePR(number);
+      showAlert({
+        text: "Pull request has been closed",
+        status: "success",
+      });
     } catch (error: any) {
       showAlert({
         text: error?.message || "Something went wrong!",
