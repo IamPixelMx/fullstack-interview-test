@@ -1,4 +1,4 @@
-export type RoutesType = { [route: string]: { path: string; query?: object } };
+export type RoutesType = { [route: string]: { path: string } };
 
 export const initialRoutes: RoutesType = {
   home: {
