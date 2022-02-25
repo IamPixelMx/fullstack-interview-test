@@ -20,11 +20,12 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 </div>
 
 <br />
-<br/>
 
-<div>
-    <a style="float:left" href="https://github.com/IamPixelMx/fullstack-interview-test/tree/master/components" >Explore proyect</a>
-    <a style="float:right" href="https://github.com/IamPixelMx/fullstack-interview-test/issues">Report an issue</a>
+<div align="center">
+    <a href="https://github.com/IamPixelMx/fullstack-interview-test/tree/master/components" >Explore proyect</a>
+     ·
+    <a href="https://github.com/IamPixelMx/fullstack-interview-test/issues">Report an issue</a>
+     ·
   </div>
 
  <br />
@@ -42,6 +43,8 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 - [**Run project**](#run-project)
 
 ---
+
+<br/>
 
 ### **Personal notes**
 
