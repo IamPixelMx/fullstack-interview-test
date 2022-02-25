@@ -118,7 +118,6 @@ const ComparePage = () => {
           status: "success",
         });
     } catch (error: any) {
-      console.error("ERRRRRROR: ", error?.message);
       showAlert({
         text:
           error?.message ||

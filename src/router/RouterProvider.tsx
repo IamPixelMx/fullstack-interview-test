@@ -10,7 +10,7 @@ import locationToRoute from "./locationToRoute";
 import { initialRoutes, RoutesType } from "./initialRoutes";
 
 type RouterContextType = {
-  route: { path: string; query?: object };
+  route: { path: string };
   routesList: RoutesType;
   setRoutesList: React.Dispatch<React.SetStateAction<RoutesType>>;
 };
