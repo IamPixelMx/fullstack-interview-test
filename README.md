@@ -1,35 +1,26 @@
-
 # fullstack-interview-test
 
-># Welcome to Pixel | GitHub Explore
+> # Welcome to Pixel | GitHub Explore
 
 <br />
 <div align="center">
   <h3 align="center"><b>GitHub Explore</b></h3>
-<a href="https://pixel-task-manager.herokuapp.com/">
+<a href="https://pixel-github-explorer.herokuapp.com/">
     <img src="public/logo.png" alt="Logo" width="140">
 </a>
 </div>
 <div align="center">
-  <a href="https://pixel-task-manager.herokuapp.com/">Go to the site</a>
+  <a href="https://pixel-github-explorer.herokuapp.com/">Go to the site</a>
 </div>
 <br/>
 <div>
   <p>
 Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that allows you to explore all details related to this repo   
-</p> 
-
-<p>
-Some things to keep in mind:
-
-* I tried to use as less dependencies that usual just because I really like to play with my own custom hooks
-
-
- </p>
+</p>
 
  <br />
-    <a style="float:left" href="https://github.com/iampixel/pixel-taskmanager/tree/master/components" >Explore proyect</a>
-    <a style="float:right" href="https://github.com/iampixel/pixel-taskmanager/issues">Report an issue</a>
+    <a style="float:left" href="https://github.com/IamPixelMx/fullstack-interview-test/tree/master/components" >Explore proyect</a>
+    <a style="float:right" href="https://github.com/IamPixelMx/fullstack-interview-test/issues">Report an issue</a>
   </div>
 
  <br />
@@ -38,50 +29,47 @@ Some things to keep in mind:
 
 ## **Content**
 
-[**Notes**](#notes)
-  - [Views](#)
-  - [Context for Router](#context-for-router)
-  - [Context for State Management](#context-for-state-management)
-  - [Improve Developer Experience](#improve-developer-experience)
-  - [Biggest Challenges](#biggest-challenges)
-  
-[**Scripts**](#scripts)
-  - [`npm start`](#npm-start)
-  - [`npm test`](#npm-test)
-  - [`npm run build`](#npm-run-build)
+- [Personal notes](#personal-notes)
+- [Pages](#pages)
+- [Context for Router](#context-for-router)
+- [Using Context for Router and State managementt](#using-context-for-router-and-state-management)
+- [Improve Developer Experience](#improve-developer-experience)
+- [Biggest Challenges](#biggest-challenges)
+
+- [**Run the porject**](#run-the-project)
+
 
 ---
 
-## **Notes :**
+### **Personal notes**
 
+- I used fewer dependencies than usual because I wanted to try some custom hooks
+- Added an extra action button which is a direct merge of two branches to spice it up
+- The project mostly used tables to show the API responses because they are an easy way to display data, neat and fast
+- Previously I had in mind to use style modules to add some UI identity but I didn't have that much time to do it so, that's is something I would do given the time... besides unit testing, of course!
+- I really enjoyed building this project and I was surprised how easy it is to enable some GitHub functionalities inside a project, I learned a lot and I'm thankful for that! <3
+- I also enjoyed creating the error handlers. It's an aler that displays info and confirmations to the user, very handy even for me as a developer user :D
 <br/>
+### **Pages**
 
-### **Views**
+The wep-app consists of 6 pages:
 
-The UI consists of 5 views:
-
-* **Overview**: Displays a list of all the groups along with their completion status. Clicking on 
-  a group should render the detail screen.
-
-* **Detail**: Displays a list of all the tasks in the selected group and allows the user to toggle 
-  the completion status of unlocked tasks.
-
-</br>
-
-
-### **Context for Router**
-
-Create a router using React Context and React Reducer
-
-Create custom hooks and components such as _Link_ to manipulate the browse history.
+- **Home**: Just to say welcome
+- **Branches**: A list of all existing branches inside the repo
+- **Branch**: When user clicks on one of the branches this view will show a list of all existing commits inside that branch
+- **Commit**: When user clicks on one commit this view will display all the details about that commit
+- **Compare**: User can select a base branch and a head branch, add some title and description and, directly merge two branches, create a new PR with the two branches or create PR and merge it, if there is no conflict
 
 </br>
 
-### **Context for State Management**
+### **Using Context for Router and State management**
 
-Create the app state management using React Context and history library to manage the browse history
+Create a Router with React Context and history library to manage the history object
+Create custom hooks and components such as _Link_ to manipulate the routing.
 
-Create custom hooks to create actions that will help us to manipulate the state.
+Create a State management using React Context and useRducer
+
+Create a lot of custom hooks to read and manipulate the state and the router
 
 </br>
 
@@ -95,38 +83,39 @@ Eslint disabled two lines of code since I cannot add an external function inside
 
 ### **Biggest Challenges**
 
-* Create the dynamic route paths, as these will depend on the existing and selected branch or commit.
-  
-</br>
+- Error handler: I tried to think in all scenarios, to manage showing all the posible info to the user
+- Create manipulate the route paths, as these will depend on the selected branch or commit.
+- Decide the stack and the structure that I wanted to work with
+- Create custom hooks
 
 </br>
+</br>
 
-## **Scripts**
+## **Run project**
 
-In the project directory, you can run:
+To run locally you need to clone this repository and run:
 
-### `npm start`
+```
+$ npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
 
-The page will reload if you make edits.
+then you will be able to locally run the project:
 
-## Deliverables
+```
+$ npm start
 
-The main objects we'll be dealing with are:
-- Commits
-- Authors
-- Branches
-- PRs
+```
 
-We'd like to see a visual representation of the git history of this repo as a **JS web-app**, using the API previously described. To be specific, we'd like to see the following:
-- A view where we can see the existing branches
-- A branch detail view where we can see all the commits to one specific branch, with commit messages, authors and timestamps.
-- A commit detail view where we can see the commit message, timestamp, number of files changed and author names / emails.
-- A "PR" create view, where we can choose two branches (base and compare), and merge them together, just like Pull Requests work in Github. 
-- A "PR" list view, where we see all created PRs and the following info: Author, Title, Description and Status (`Open`, `Closed`, `Merged`). If the status is `Open`, there should be a button that allows us to mark it as `Closed`.
+Which runs the app in the development mode.\
+So, just open [http://localhost:3000](http://localhost:3000) to view it in the browser. Although, you will have only a limited amount of API calls available but it's ok, if you want to keep playing yo can add your own .env file with your own `API_KEY` and you can also add Github repo of your preference using `BASE_URL` like this:
 
-For the **PR create view**, we'll ask the user for a PR title and description, and we'll give them 2 options: either save it (Status = `Open`), or merge it. Note that merge operations can fail due to conflicts or other reasons, so make sure you handle and show whatever error happens when merging. There's no need to do something about these errors other than show them in the frontend. After a successful merge, the PR should move to a `Merged` status.
+```
+REACT_APP_API_KEY={YOUR_API_KEY}
+REACT_APP_BASE_URL=https://api.github.com/repos/{owner}/{repo}
 
- Thanks for your consideration, please let me know what you think. I hope you enjoy it! 🚀
+```
+
+or you can got to the [repo's website](https://pixel-github-explorer.herokuapp.com) to play as much as you want!
+
+Please, let me know what you think and I hope you enjoy it! 🚀
