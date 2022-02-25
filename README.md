@@ -4,21 +4,25 @@
 
 <br />
 <div align="center">
-  <h3 align="center"><b>GitHub Explore</b></h3>
 <a href="https://pixel-github-explorer.herokuapp.com/">
     <img src="public/logo.png" alt="Logo" width="140">
 </a>
+  <h3 align="center"><b>GitHub Explore</b></h3>
 </div>
+
+<br />
+
 <div align="center">
-  <a href="https://pixel-github-explorer.herokuapp.com/">Go to the site</a>
-</div>
-<br/>
-<div>
   <p>
 Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that allows you to explore all details related to this repo   
 </p>
+  <a  href="https://pixel-github-explorer.herokuapp.com/">Go to the site >></a>
+</div>
 
- <br />
+<br />
+<br/>
+
+<div>
     <a style="float:left" href="https://github.com/IamPixelMx/fullstack-interview-test/tree/master/components" >Explore proyect</a>
     <a style="float:right" href="https://github.com/IamPixelMx/fullstack-interview-test/issues">Report an issue</a>
   </div>
@@ -31,13 +35,11 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 
 - [Personal notes](#personal-notes)
 - [Pages](#pages)
-- [Context for Router](#context-for-router)
 - [Using Context for Router and State managementt](#using-context-for-router-and-state-management)
-- [Improve Developer Experience](#improve-developer-experience)
-- [Biggest Challenges](#biggest-challenges)
+- [Improve developer dxperience](#improve-developer-experience)
+- [Biggest challenges](#biggest-challenges)
 
 - [**Run project**](#run-project)
-
 
 ---
 
@@ -49,7 +51,8 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 - Previously I had in mind to use style modules to add some UI identity but I didn't have that much time to do it so, that's is something I would do given the time... besides unit testing, of course!
 - I really enjoyed building this project and I was surprised how easy it is to enable some GitHub functionalities inside a project, I learned a lot and I'm thankful for that! <3
 - I also enjoyed creating the error handlers. It's an aler that displays info and confirmations to the user, very handy even for me as a developer user :D
-</br>
+
+  <br/>
 ### **Pages**
 
 The wep-app consists of 6 pages:
@@ -60,7 +63,7 @@ The wep-app consists of 6 pages:
 - **Commit**: When user clicks on one commit this view will display all the details about that commit
 - **Compare**: User can select a base branch and a head branch, add some title and description and, directly merge two branches, create a new PR with the two branches or create PR and merge it, if there is no conflict
 
-</br>
+  <br/>
 
 ### **Using Context for Router and State management**
 
@@ -71,17 +74,15 @@ Create a State management using React Context and useRducer
 
 Create a lot of custom hooks to read and manipulate the state and the router
 
-</br>
+  <br/>
 
-### **Improve Developer Experience**
+### **Improve developer experience**
 
-Add `baseUrl` property to `tsconfig.json` file to make the imports scripts easier to read for the developer.
+Add _`baseUrl`_ property to _`tsconfig.json`_ file to make the imports scripts easier to read for the developer.
 
-Eslint disabled two lines of code since I cannot add an external function inside a dependency array otherwise it would generate an infinite loop of re-renders.
+  <br/>
 
-</br>
-
-### **Biggest Challenges**
+### **Biggest challenges**
 
 - Error handler: I tried to think in all scenarios, to manage showing all the posible info to the user
 - Create manipulate the route paths, as these will depend on the selected branch or commit.
@@ -109,10 +110,14 @@ $ npm start
 
 Which runs the app in the development mode.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Although, you will have only a limited available amount of API calls but it's ok, if you want you can add your own .env file you just need to add your own GitHub `API_KEY` and, also, the `BASE_URL` to your favorite Github repository
+<br/>
 
+Although, you will have only a limited available amount of API calls but it's ok, if you want you can add your own .env file you just need to add your own GitHub _`API_KEY`_ and the _`BASE_URL`_ from your favorite GitHub repository, like this:
+
+File
+>_`.env`_
 ```
 REACT_APP_API_KEY={YOUR_API_KEY}
 
@@ -120,6 +125,8 @@ REACT_APP_BASE_URL=https://api.github.com/repos/{owner}/{repo}
 
 ```
 
-or you can got to the [repo's website](https://pixel-github-explorer.herokuapp.com) to play as much as you want!
+or, simply, you can go to the [repo's website >>](https://pixel-github-explorer.herokuapp.com) to play as much as you want!
+
+<br/>
 
 Please, let me know what you think and I hope you enjoy it! 🚀
