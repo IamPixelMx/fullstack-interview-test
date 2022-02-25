@@ -40,7 +40,7 @@ const fetchInstance = {
         ...(params && { body: JSON.stringify(params) }),
       });
       const data = await response.json();
-      if (response.status === 200) {
+      if (response.status === 201) {
         return data;
       } else {
         throw new Error(

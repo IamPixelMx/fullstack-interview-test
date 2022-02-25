@@ -1,5 +1,12 @@
 import { Route, useRouter } from "router";
-import { Home, BranchesPage, BranchPage, PullsPage, CommitPage } from "pages";
+import {
+  Home,
+  BranchesPage,
+  BranchPage,
+  PullsPage,
+  ComparePage,
+  CommitPage,
+} from "pages";
 import { Layout } from "components";
 
 const App = () => {
@@ -18,6 +25,9 @@ const App = () => {
       </Route>
       <Route path={routesList.pulls.path}>
         <PullsPage />
+      </Route>
+      <Route path={routesList.compare.path}>
+        <ComparePage />
       </Route>
       <Route path={routesList.commit.path}>
         <CommitPage />

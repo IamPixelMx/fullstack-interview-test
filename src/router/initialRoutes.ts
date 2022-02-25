@@ -16,7 +16,7 @@ export const initialRoutes: RoutesType = {
   pulls: {
     path: "/pulls",
   },
-  pull: {
-    path: "/pull",
+  compare: {
+    path: "/compare",
   },
 };

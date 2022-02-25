@@ -15,32 +15,26 @@ export const getCommitDetail = (commitRef: string) =>
 
 export const getPRs = () => fetchInstance.get(`/pulls?state=all`);
 
-export const getPRDetail = (prNumber: number) =>
-  fetchInstance.get(`/pulls/${prNumber}`);
-
-export const getPRFiles = (prNumber: number) =>
-  fetchInstance.get(`/pulls/${prNumber}/files`);
-
 interface BranchParamsType {
   base: string;
   head: string;
 }
 
 interface MergeParamsType extends BranchParamsType {
-  commit_message?: string;
+  commit_message: string;
 }
 export const mergeBranch = (params: MergeParamsType) =>
   fetchInstance.post(`/merges`, params);
 
-interface NewPRParamsType extends BranchParamsType {
+export interface NewPRParamsType extends BranchParamsType {
   title: string;
   body: string;
 }
 export const createPR = (params: NewPRParamsType) =>
   fetchInstance.post(`/pulls`, params);
 
-export const mergePR = (prNumber: number) =>
-  fetchInstance.post(`/pulls/${prNumber}/merge`);
+// export const mergePR = (prNumber: number) =>
+//   fetchInstance.post(`/pulls/${prNumber}/merge`);
 
 export const closePR = (prNumber: number) =>
   fetchInstance.patch(`/pulls/${prNumber}`, { state: "closed" });
