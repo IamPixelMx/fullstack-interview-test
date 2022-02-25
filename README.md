@@ -4,7 +4,7 @@
 
 <br />
 <div align="center">
-<a href="https://pixel-github-explorer.herokuapp.com/">
+<a href="https://pixel-github-explorer.herokuapp.com/" target="_blank">
     <img src="public/logo.png" alt="Logo" width="140">
 </a>
   <h3 align="center"><b>GitHub Explore</b></h3>
@@ -16,7 +16,7 @@
   <p>
 Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that allows you to explore all details related to this repo   
 </p>
-  <a  href="https://pixel-github-explorer.herokuapp.com/">Go to the site >></a>
+  <a  href="https://pixel-github-explorer.herokuapp.com/" target="_blank">Go to the site >></a>
 </div>
 
 <br />
@@ -36,7 +36,7 @@ Hi👋, my name is Itzel!!  <em>Pixel | GitHub Explore</em> is a web app that al
 
 - [Personal notes](#personal-notes)
 - [Pages](#pages)
-- [Using Context for Router and State managementt](#using-context-for-router-and-state-management)
+- [Using Context for Router and State management](#using-context-for-router-and-state-management)
 - [Improve developer dxperience](#improve-developer-experience)
 - [Biggest challenges](#biggest-challenges)
 
@@ -101,14 +101,12 @@ To run locally you need to clone this repository and run:
 
 ```
 $ npm install
-
 ```
 
 then you will be able to locally run the project:
 
 ```
 $ npm start
-
 ```
 
 Which runs the app in the development mode.
@@ -125,7 +123,6 @@ File
 REACT_APP_API_KEY={YOUR_API_KEY}
 
 REACT_APP_BASE_URL=https://api.github.com/repos/{owner}/{repo}
-
 ```
 
 or, simply, you can go to the [repo's website >>](https://pixel-github-explorer.herokuapp.com) to play as much as you want!
