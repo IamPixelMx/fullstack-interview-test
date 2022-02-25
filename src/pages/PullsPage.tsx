@@ -46,7 +46,7 @@ const PullsPage = () => {
 
   return (
     <React.Fragment>
-      <Table bordered striped>
+      <Table bordered>
         <thead>
           <tr>
             <th className="w-100">Pull requests</th>

@@ -33,8 +33,8 @@ export interface NewPRParamsType extends BranchParamsType {
 export const createPR = (params: NewPRParamsType) =>
   fetchInstance.post(`/pulls`, params);
 
-// export const mergePR = (prNumber: number) =>
-//   fetchInstance.post(`/pulls/${prNumber}/merge`);
+export const mergePR = (prNumber: number) =>
+  fetchInstance.put(`/pulls/${prNumber}/merge`);
 
 export const closePR = (prNumber: number) =>
   fetchInstance.patch(`/pulls/${prNumber}`, { state: "closed" });
