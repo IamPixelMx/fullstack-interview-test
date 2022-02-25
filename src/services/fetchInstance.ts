@@ -54,6 +54,27 @@ const fetchInstance = {
     }
   },
 
+  put: async (url = "") => {
+    try {
+      const response = await fetch(`${BASE_URL}${url}`, {
+        headers,
+        method: "PUT",
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        return data;
+      } else {
+        throw new Error(
+          `${response.status}:  ${
+            data.message || response.statusText || deafultErrorMsg
+          }`
+        );
+      }
+    } catch (error) {
+      throw error;
+    }
+  },
+
   patch: async (url = "", params?: ParamsType) => {
     try {
       const response = await fetch(`${BASE_URL}${url}`, {

@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Table, Form, FloatingLabel, Button, Row, Col } from "react-bootstrap";
 import { useActions } from "store";
-import { getRepo, getBranches, createPR, mergeBranch } from "services/api";
+import {
+  getRepo,
+  getBranches,
+  createPR,
+  mergeBranch,
+  mergePR,
+} from "services/api";
 
 const ComparePage = () => {
   const { fetchStart, fetchEnd, showAlert, setBranch } = useActions();
@@ -58,37 +64,59 @@ const ComparePage = () => {
       head,
     };
 
-    console.log("PARAMS: ", base, head, title, body);
-
     try {
       switch (name) {
-        case "merge":
-          const mergeParams = {
+        case "mergeBranches":
+          const mergeBranchesParams = {
             ...requiredParams,
             commit_message: `${title}: ${body}`,
           };
-          await mergeBranch(mergeParams);
+          await mergeBranch(mergeBranchesParams);
           break;
 
-        case "create":
-          const createParams = {
+        case "createPR":
+          const createPullParams = {
             ...requiredParams,
             title,
             body,
           };
-          await createPR(createParams);
+          await createPR(createPullParams);
           break;
 
+        case "mergePR":
+          const createPRparams = {
+            ...requiredParams,
+            title,
+            body,
+          };
+          const data = await createPR(createPRparams);
+          const { number } = data;
+          const res = await mergePR(number);
+          const { message } = res;
+          showAlert({
+            text: message,
+            status: "success",
+          });
+          return;
+
         default:
-          break;
+          showAlert({
+            text: "The action can't be compleated right now",
+            status: "info",
+          });
+          return;
       }
 
       const successText =
-        name === "merge" ? "Merge completed" : "Pull request was created";
-      showAlert({
-        text: successText,
-        status: "success",
-      });
+        (name === "mergeBranches" && "Branches successfully merged") ||
+        (name === "createPR" && "Pull request successfully created") ||
+        "";
+
+      successText &&
+        showAlert({
+          text: successText,
+          status: "success",
+        });
     } catch (error: any) {
       console.error("ERRRRRROR: ", error?.message);
       showAlert({
@@ -108,7 +136,7 @@ const ComparePage = () => {
 
   return (
     <React.Fragment>
-      <Table bordered striped>
+      <Table bordered>
         <thead>
           <tr>
             <th className="w-100">Create pull request</th>
@@ -164,14 +192,28 @@ const ComparePage = () => {
         </FloatingLabel>
         <Row className="justify-content-between">
           <Col className="text-center">
-            <Button name="merge" variant="outline-dark" type="button" onClick={onClick}>
+            <Button
+              name="mergeBranches"
+              variant="outline-dark"
+              type="button"
+              onClick={onClick}
+            >
               Merge branches
             </Button>
           </Col>
-          <Col md={2} />
           <Col className="text-center">
             <Button
-              name="create"
+              name="mergePR"
+              variant="outline-dark"
+              type="button"
+              onClick={onClick}
+            >
+              Merge as pull request
+            </Button>
+          </Col>
+          <Col className="text-center">
+            <Button
+              name="createPR"
               variant="outline-dark"
               type="button"
               onClick={onClick}

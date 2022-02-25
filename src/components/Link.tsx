@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter, history } from "router";
+import { useActions } from "store";
 
 type Props = {
   to: string;
@@ -19,14 +20,15 @@ const Link = React.memo(
     ...rest
   }: Props) => {
     const { route } = useRouter();
+    const { clearAlert } = useActions();
 
     const handleClick = (e: React.MouseEvent) => {
       e.preventDefault();
-      // If it's not a valid new path the function will not trigger.
       if (route.path === to) return;
 
       if (onClick) onClick(e);
       history.push(to);
+      clearAlert()
     };
 
     return (

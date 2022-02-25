@@ -39,12 +39,13 @@ const BranchPage = () => {
 
   return (
     <React.Fragment>
-      <Table>
+      <Table bordered>
         <thead>
           <tr>
             <th>{currentBranch}</th>
           </tr>
         </thead>
+        <tr></tr>
       </Table>
       {!(commits && commits.length > 0) && "No commit has been created"}
       {commits &&
